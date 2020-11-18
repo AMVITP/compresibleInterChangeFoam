@@ -108,7 +108,18 @@ int main(int argc, char *argv[])
             #include "compressibleAlphaEqnSubCycle.H"
 
             #include "UEqn.H"
-            #include "TEqn.H"
+            //---------------------------
+            //opn2
+            #include "calcSourceTerms.H"
+            //----------------------------
+	    #include "TEqn.H"
+
+            //---------------------------
+            //opn2
+           Info << "Evaporation rate: " << mEvap.value() << " kg/s at t = " << r$
+            //---------------------------
+
+
 
             // --- Pressure corrector loop
             while (pimple.correct())

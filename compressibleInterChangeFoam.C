@@ -116,7 +116,7 @@ int main(int argc, char *argv[])
 
             //---------------------------
             //opn2
-           Info << "Evaporation rate: " << mEvap.value() << " kg/s at t = " << r$
+	Info << "Evaporation rate: " << mEvap.value() << " kg/s at t = " << runTime.timeName() << " s" << endl;
             //---------------------------
 
 

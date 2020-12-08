@@ -16,6 +16,13 @@ if (intAlphaPsi0Tild.value() > 1e-99)
 
 volScalarField jEvap = (T-Tsat)/(Rph*hEvap);
 
+//ins-----------------------
+
+//volScalarField TTsig = sign(Tsat-T);
+
+//-------------------------
+
+
 psi0 = N*jEvap*alpha1*psi0Tild;
 
 dimensionedScalar intPsi0 = fvc::domainIntegrate(psi0);
@@ -67,10 +74,12 @@ forAll(mesh.C(),iCell)
 	if (alpha1[iCell] < cutoff)
 	{
 		rhoSource[iCell] = Nv.value()*(1.0-alpha1[iCell])*psi[iCell];
+	//	rhoSource[iCell] = Nv.value()*(1.0-alpha1[iCell])*psi[iCell]*TTsig[iCell];
 	}
 	else if (alpha1[iCell] > 1.0-cutoff)
 	{
-		rhoSource[iCell] = -Nl.value()*alpha1[iCell]*psi[iCell];
+	rhoSource[iCell] = -Nl.value()*alpha1[iCell]*psi[iCell];
+//	rhoSource[iCell] = -Nl.value()*alpha1[iCell]*psi[iCell]*TTsig[iCell];
 	}
 	else
 	{

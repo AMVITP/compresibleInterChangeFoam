@@ -103,7 +103,10 @@
         (
             fvc::div(phiHbyA)
           - fvm::laplacian(rAUf, p_rgh)
-        );
+        //op2        
+          - rhoSource/rho
+       //
+);
 
         solve
         (

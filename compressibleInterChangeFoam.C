@@ -69,6 +69,8 @@ int main(int argc, char *argv[])
     const volScalarField& psi1 = mixture.thermo1().psi();
     const volScalarField& psi2 = mixture.thermo2().psi();
 
+    #include "TTsat.H"
+
     turbulence->validate();
 
     if (!LTS)
@@ -108,7 +110,12 @@ int main(int argc, char *argv[])
             #include "compressibleAlphaEqnSubCycle.H"
 
             #include "UEqn.H"
+
+	
+            #include "TTsat.H"
+            
             //---------------------------
+            
             //opn2
             #include "calcSourceTerms.H"
             //----------------------------

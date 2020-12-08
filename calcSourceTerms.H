@@ -14,7 +14,10 @@ if (intAlphaPsi0Tild.value() > 1e-99)
 	N = intPsi0Tild/intAlphaPsi0Tild;
 }
 
-volScalarField jEvap = (T-Tsat)/(Rph*hEvap);
+//volScalarField jEvap = (T-Tsat)/(Rph*hEvap);
+
+volScalarField jEvap = (T-TTsat)/(Rph*hEvap);
+
 
 //ins-----------------------
 

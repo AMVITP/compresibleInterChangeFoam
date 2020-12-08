@@ -178,10 +178,14 @@ const volScalarField& rho2 = mixture.thermo2().rho();
         dimensionedScalar hEvap = transportProperties.lookup("hEvap");
         dimensionedScalar DPsi = transportProperties.lookup("DPsi");
         dimensionedScalar DAlpha = transportProperties.lookup("DAlpha");
+        dimensionedScalar Psat = transportProperties.lookup("Psat");
+        dimensionedScalar RRv = transportProperties.lookup("RRv");
 
 
 
-//----------------------------------------------------------------------------------
+
+
+//--------------------------------------------------------------------------------
 volScalarField rho
 (
     IOobject
@@ -212,6 +216,11 @@ mesh.setFluxRequired(alpha1.name());
 #include "readGravitationalAcceleration.H"
 #include "readhRef.H"
 #include "gh.H"
+
+
+
+
+
 
 
 // Mass flux

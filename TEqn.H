@@ -97,7 +97,7 @@ fvScalarMatrix TEqn
         )
 
 //-----------------------------------------------------------
-      == -hESource*Tsat
+      == -hESource*TTsat
 );
 
 TEqn.solve();
